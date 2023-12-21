@@ -4,8 +4,6 @@ exports.artist_data = async function(spotify_id, token) {
     
     const url = `https://api.spotify.com/v1/artists/${spotify_id}`
 
-    const data = {}
-
     const config = {
         headers: {
             'Authorization': `Bearer ${token}`

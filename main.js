@@ -9,7 +9,7 @@ let artist_id = '4Z8W4fKeB5YxbusRsdQVPb'
 
 async function main() {
     const token = await request_token.token(client_id, client_secret)
-    //console.log(token)
+    // console.log(token)
     await request_artist_data.artist_data(artist_id, token)
 }
 
