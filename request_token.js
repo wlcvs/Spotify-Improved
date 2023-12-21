@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-exports.token = function(client_id, client_secret) {
+exports.token = async function(client_id, client_secret) {
 
     let token = ''
 
@@ -18,9 +18,9 @@ exports.token = function(client_id, client_secret) {
         }
     }
 
-    axios.post(url_to_get_token, data_to_get_token, config_to_get_token)
+    await axios.post(url_to_get_token, data_to_get_token, config_to_get_token)
         .then(response => {
-            console.log("Response:", response.data)
+            // console.log("Response:", response.data)
             token = response.data.access_token
         })
         .catch(error => {
