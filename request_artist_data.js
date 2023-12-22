@@ -12,7 +12,7 @@ exports.artist_data = async function(spotify_id, token) {
 
     await axios.get(url, config)
         .then(response => {
-            console.log("Response:", response)
+            console.log("Response:", response.data)
         })
         .catch(error => {
             console.log('Error in request:', error)
