@@ -56,13 +56,18 @@ exports.request_authorization = async function request_authorization(client_id, 
         this.refresh_token = refresh_token
     }
 
-    let response = new Response()
+    let response_token = new Response()
 
     await axios.post('https://accounts.spotify.com/api/token', data, config)
       .then(response => {
-        response.access_token = response.access_token
+        response_token.access_token = response.access_token
+        response_token.token_type = response.token_type
+        response_token.scope = response.scope
+        response_token.expires_in = response.expires_in
+        response_token.refresh_token = response.refresh_token
       })
 
+      console.log(response_token)
 }
 
 function generateRandomString(length) {
